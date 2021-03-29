@@ -8,6 +8,7 @@ import java.util.Set;
 
 
 @RestController
+
 public class EmployeeController {
 
 
@@ -38,7 +39,13 @@ public class EmployeeController {
 	@GetMapping("/employee")
 	public @ResponseBody
 	Set<EmployeeDetails> getEmployees()  {
-		return empservice.findAll();
+		if(empservice.findAll()!= null){
+			return empservice.findAll();
+		}
+		else{
+
+		}
+
 
 	}
 
